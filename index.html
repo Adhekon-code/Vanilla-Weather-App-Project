@@ -10,6 +10,8 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="src/Style.CSS" />
     <title>Vanilla-Weather-Project</title>
   </head>
@@ -19,10 +21,10 @@
         <div class="wrapper">
           <div class="overview">
             <h1>Hey,what's the weather like today?</h1>
-            <h2>Nairobi</h2>
+            <h2 id="city"></h2>
             <ul>
-              <li>Friday,14:00</li>
-              <li>cloudy</li>
+              <li>Last updated on:<span id="date"></span></li>
+              <li id="description"></li>
             </ul>
           </div>
           <div class="row">
@@ -34,16 +36,15 @@
                   class="float-left"
                 />
                 <div class="float-left">
-                  <strong>12</strong>
+                  <strong id="temperature"></strong>
                   <span class="units">°C|<a href="#">°F</a></span>
                 </div>
               </div>
             </div>
             <div class="col-6">
               <ul>
-                <li>Precipitation: 0%</li>
-                <li>Humidity: 75%</li>
-                <li>Wind:20 mph</li>
+                <li>Humidity:<span id="humidity"></span>%</li>
+                <li>Wind:<span id="wind"></span>kmph</li>
               </ul>
             </div>
           </div>
