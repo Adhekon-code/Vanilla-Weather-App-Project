@@ -1,5 +1,10 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(242, 235, 243) 0%,
+    rgb(234, 241, 249) 90.1%
+  );
 }
 .weather-wrapper {
   max-width: 600px;
@@ -8,7 +13,8 @@ body {
 .wrapper {
   padding: 20px;
   border: 1px solid rgb(125, 125, 172);
-  border-radius: 5px;
+  border-radius: 10px;
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/019/844/original/pexels-francesco-ungaro-2835436.jpg?1635275066");
 }
 .overview {
   margin-bottom: 20px;
@@ -41,17 +47,18 @@ body {
 }
 
 h1 {
-  color: rgb(130, 166, 231);
+  color: rgb(237, 239, 241);
   font-size: 24px;
   margin: 0;
   line-height: 1.2;
-  font-weight: 100;
+  font-weight: lighter;
+  padding-bottom: 15px;
 }
 li:first-letter {
   text-transform: capitalize;
 }
 h2 {
-  color: rgb(130, 166, 231);
+  color: rgb(237, 239, 241);
   font-size: 20px;
   padding-bottom: 0;
   margin-top: 10px;
@@ -65,7 +72,7 @@ ul {
 }
 li {
   list-style: none;
-  color: rgb(130, 166, 231);
+  color: rgb(237, 239, 241);
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
