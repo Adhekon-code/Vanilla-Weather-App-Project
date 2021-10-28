@@ -22,7 +22,7 @@ function formatDate(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response);
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -80,7 +80,7 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
-  getForecast(response.data.cord);
+  getForecast(response.data.coord);
 }
 function search(city) {
   let apiKey = "11cf82dd2a2ab0b3b3a2afb3ab85ac4b";
@@ -125,4 +125,3 @@ let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
 search("Nairobi");
-displayForecast();
