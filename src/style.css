@@ -1,9 +1,13 @@
 body {
   font-family: "Roboto", sans-serif;
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(242, 235, 243) 0%,
-    rgb(234, 241, 249) 90.1%
+  background: linear-gradient(
+    to right,
+    #e4afcb 0%,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #e2c58b 30%,
+    #c2ce9c 64%,
+    #7edbdc 100%
   );
 }
 .weather-wrapper {
@@ -14,10 +18,24 @@ body {
   padding: 20px;
   border: 1px solid rgb(125, 125, 172);
   border-radius: 10px;
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/019/844/original/pexels-francesco-ungaro-2835436.jpg?1635275066");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/019/843/original/pexels-frans-van-heerden-624015.jpg?1635274645");
 }
 .overview {
   margin-bottom: 20px;
+}
+.card-body {
+  background-color: #d5def5;
+  color: black;
+  font-size: 26px;
+  padding: 20px;
+  border: 1px solid #8594e4;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 400;
+}
+.weather-forecast {
+  text-align: center;
+  margin-right: 10px auto;
 }
 .weather-temp img {
   margin-right: 5px;
@@ -26,21 +44,22 @@ body {
   width: 64px;
 }
 .weather-temp strong {
-  color: rgb(39, 35, 35);
+  color: whitesmoke;
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
 }
 .weather-temp .units {
-  color: rgb(39, 35, 35);
+  color: whitesmoke;
   position: relative;
   top: -34px;
   font-size: 16px;
 }
 .weather-temp .active {
-  color: rgb(7, 7, 7);
+  color: whitesmoke;
   cursor: default;
   text-decoration: none;
+  font-weight: 200;
 }
 .weather-temp .active-two {
   text-decoration: none;
@@ -63,7 +82,7 @@ h2 {
   padding-bottom: 0;
   margin-top: 10px;
   margin-bottom: 0;
-  font-weight: 100;
+  font-weight: bold;
   line-height: 1.2;
 }
 ul {
