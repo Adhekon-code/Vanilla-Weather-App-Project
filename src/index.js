@@ -20,32 +20,43 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Mon", "Tue", "Wed", "Thur", "Fri", "Sat", "Sun"];
+
+  return days[day];
+}
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Thur", "Fri", "Sat", "Sun", "Mon"];
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-      <div class="card" style="width: 7rem">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+      <div class="card" style="width: 6rem">
                 <div class="card-body">
-                  <h5 class="card-title">${day}</h5>
+                  <h5 class="card-title">${formatDay(forecastDay.dt)}</h5>
                   <img
-                    src="https://depositphotos.com/12492703/stock-photo-summer-hot-sun.html"
-                    alt="sun"
-                    width="36"
+                    src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png" alt="" width="36"
                   />
                   <h6 class="card-subtitle mb-2 text-muted">
-                    <strong>12°</strong>|22°
+                    <strong>${Math.round(
+                      forecastDay.temp.max
+                    )}°</strong>|${Math.round(forecastDay.temp.min)}°
                   </h6>
                 </div>
                 </div>
             </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -125,3 +136,4 @@ let celciusLink = document.querySelector("#celcius-link");
 celciusLink.addEventListener("click", displayCelciusTemperature);
 
 search("Nairobi");
+displayForecast();
